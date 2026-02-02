@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>醫療衛教設計作品集</title>
+    <style>
+        body { font-family: 'Microsoft JhengHei', sans-serif; background: #f5f5f5; padding: 40px; }
+        h1 { text-align: center; color: #333; margin-bottom: 40px; }
+        
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .card {
+            width: 300px;
+            background: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Card 1: Sleep (Blue) */
+        .card-1 .header { background: #2c3e50; color: white; padding: 20px; text-align: center; }
+        .card-1 .header h2 { margin: 0; font-size: 24px; }
+        .card-1 .body { padding: 20px; flex-grow: 1; }
+        .card-1 .point { display: flex; align-items: center; margin-bottom: 15px; }
+        .card-1 .dot { width: 10px; height: 10px; background: #e67e22; border-radius: 50%; margin-right: 10px; }
+        .card-1 .img-placeholder { width: 100%; height: 150px; background: #ecf0f1; display: flex; justify-content: center; align-items: center; color: #bdc3c7; margin-bottom: 20px; }
+
+        /* Card 2: Tea (Green) */
+        .card-2 { border: 2px solid #27ae60; }
+        .card-2 .header { background: #27ae60; color: white; padding: 15px; text-align: center; font-weight: bold; }
+        .card-2 .body { padding: 20px; background: #eafaf1; flex-grow: 1; text-align: center; }
+        .card-2 .recipe { border: 1px dashed #27ae60; padding: 10px; background: white; margin-top: 10px; }
+        
+        /* Card 3: Pain (Red) */
+        .card-3 .header { background: #c0392b; color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .card-3 .alert { background: white; color: #c0392b; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+        .card-3 .body { padding: 20px; }
+        .card-3 .human-body { width: 100%; height: 200px; background: #fadbd8; border-radius: 8px; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; color: #c0392b; font-weight: bold; }
+
+    </style>
+</head>
+<body>
+
+    <h1>醫療衛教圖文設計範例</h1>
+
+    <div class="gallery">
+        
+        <!-- Design 1 -->
+        <div class="card card-1">
+            <div class="header">
+                <h2>失眠救星</h2>
+                <small>3個穴位，一覺到天亮</small>
+            </div>
+            <div class="body">
+                <div class="img-placeholder" style="background:white;">
+                    <img src="https://images.unsplash.com/photo-1544367563-12123d8965cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" style="width:100%; height:100%; object-fit:cover;" alt="穴位按摩">
+                </div>
+                <div class="point">
+                    <div class="dot"></div>
+                    <div><strong>神門穴</strong>：手腕橫紋處，安定心神。</div>
+                </div>
+                <div class="point">
+                    <div class="dot"></div>
+                    <div><strong>內關穴</strong>：改善淺眠多夢。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Design 2 -->
+        <div class="card card-2">
+            <div class="header">🌿 四季養生茶飲</div>
+            <div class="body">
+                <h3>春季・疏肝解鬱</h3>
+                <p>適合壓力大、眼睛乾澀的上班族。</p>
+                <div class="recipe">
+                    <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" style="width:100%; height:120px; object-fit:cover; margin-bottom:10px;" alt="養生茶">
+                    <br>
+                    🍵 <strong>配方：</strong><br>
+                    菊花 3g<br>
+                    枸杞 5g<br>
+                    決明子 2g
+                </div>
+                <p style="font-size:12px; color:#27ae60; margin-top:10px;">*請諮詢醫師後飲用</p>
+            </div>
+        </div>
+
+        <!-- Design 3 -->
+        <div class="card card-3">
+            <div class="header">
+                <h3>坐骨神經痛</h3>
+                <span class="alert">警訊</span>
+            </div>
+            <div class="body">
+                <div class="human-body" style="background:white;">
+                    <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" style="width:100%; height:100%; object-fit:cover;" alt="脊椎健康">
+                </div>
+                <p>別忽視腰部的警訊！如果疼痛延伸至大腿後側，可能是椎間盤突出的前兆。</p>
+                <button style="width:100%; background:#c0392b; color:white; border:none; padding:10px; border-radius:4px; margin-top:10px;">自我檢測表</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
