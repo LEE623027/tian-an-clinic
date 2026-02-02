@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天安中醫診所 | 專治內科・減重・便秘專家</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2C5F2D; /* Herbal Green */
+            --accent: #977B3F;  /* Muted Gold */
+            --bg: #FDFBF7;      /* Rice Paper White */
+            --text: #333333;    /* Charcoal */
+            --light-text: #666666;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Noto Serif TC', serif;
+            font-weight: 700;
+        }
+
+        /* Utility */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .text-center { text-align: center; }
+        .section-padding { padding: 80px 0; }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: 0.3s;
+            letter-spacing: 1px;
+        }
+        .btn:hover { background-color: #1e421f; }
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+        .btn-outline:hover { background-color: var(--primary); color: white; }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            background: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; color: var(--primary); font-weight: bold; letter-spacing: 2px; }
+        .nav-links a { margin-left: 30px; text-decoration: none; color: var(--text); font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1544367563-12123d8965cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; letter-spacing: 5px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 30px; letter-spacing: 2px; opacity: 0.9; }
+
+        /* About Section */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-img { width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .section-title { color: var(--primary); font-size: 2rem; margin-bottom: 20px; position: relative; display: inline-block; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent); margin-top: 10px; }
+
+        /* Services Section */
+        .services { background-color: #F5F2EC; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+            border-top: 3px solid transparent;
+        }
+        .service-card:hover { transform: translateY(-10px); border-top-color: var(--accent); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+        .icon { font-size: 40px; margin-bottom: 20px; color: var(--primary); }
+        .service-card h3 { margin-bottom: 15px; font-size: 1.5rem; }
+        
+        /* The "Special" Card */
+        .service-card.special { border: 1px solid var(--accent); background: linear-gradient(145deg, #fff, #fff9f0); }
+        .service-card.special h3 { color: var(--accent); }
+
+        /* Doctor & Hours Placeholder */
+        .placeholder-box {
+            border: 2px dashed #ccc;
+            background: #eee;
+            color: #777;
+            padding: 60px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        /* Footer */
+        footer { background: #1a1a1a; color: white; padding: 50px 0; text-align: center; }
+        .footer-logo { font-size: 24px; font-family: 'Noto Serif TC', serif; margin-bottom: 20px; display: block; }
+        .footer-info { opacity: 0.7; font-size: 0.9rem; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplified for mobile demo */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">天安中醫</div>
+            <div class="nav-links">
+                <a href="#about">關於天安</a>
+                <a href="#services">專科調理</a>
+                <a href="#doctor">醫師團隊</a>
+                <a href="#contact">預約門診</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>傳承・天安</h1>
+            <p>融合古法智慧與現代醫學，找回身體最純粹的平衡</p>
+            <a href="#contact" class="btn">立即預約諮詢</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div>
+                    <h2 class="section-title">既傳統，又獨特</h2>
+                    <p>天安中醫不只是看診，更是一場身心的對話。我們保留了中醫幾千年的全人觀點，同時摒棄了陳舊的框架。</p>
+                    <br>
+                    <p>在這裡，沒有刺鼻的藥味，只有淡淡的草本香氣。我們相信，最好的治療，是在舒適與信任中，喚醒身體自癒的力量。</p>
+                    <br>
+                    <a href="#" class="btn-outline">了解我們的理念</a>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="中醫把脈" class="about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">專業調理項目</h2>
+                <p>針對現代人的亞健康狀態，提供精準的客製化療程</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Internal Medicine -->
+                <div class="service-card">
+                    <div class="icon">🌿</div>
+                    <h3>內科全人調理</h3>
+                    <p>失眠、疲勞、腸胃不適。透過精準辯證，從根源調整體質，讓氣血循環重回正軌。</p>
+                </div>
+
+                <!-- Weight Loss -->
+                <div class="service-card">
+                    <div class="icon">⚖️</div>
+                    <h3>漢方健康減重</h3>
+                    <p>不挨餓、不傷身。結合針灸與調理，提升基礎代謝，雕塑理想體態，找回輕盈的自己。</p>
+                </div>
+
+                <!-- Constipation (Special) -->
+                <div class="service-card special">
+                    <div class="icon">✨</div>
+                    <h3>極・暢通調理</h3>
+                    <p><b>便秘救星</b></p>
+                    <p>許多人說它是「神奇」的體驗。改善長年頑固困擾，讓身體享受前所未有的順暢與潔淨。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctor & Hours (Placeholder) -->
+    <section id="doctor" class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">醫師團隊與門診資訊</h2>
+            </div>
+            <div class="placeholder-box">
+                <h3>👨‍⚕️ 專業醫師陣容</h3>
+                <p>（此處將補充醫師學經歷、專業證照與個人簡介）</p>
+                <hr style="margin: 20px 0; border: 0; border-top: 1px solid #ddd;">
+                <h3>🕒 門診時間表</h3>
+                <p>（此處將補充每日看診時段）</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <span class="footer-logo">天安中醫診所</span>
+            <div class="footer-info">
+                <p>電話：(02) 2345-6789 (預設)</p>
+                <p>地址：台北市信義區... (預設)</p>
+                <p>&copy; 2026 Tian An Traditional Chinese Medicine Clinic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
